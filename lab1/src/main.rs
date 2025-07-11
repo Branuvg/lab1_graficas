@@ -38,6 +38,21 @@ fn main() {
         frame_buffer.set_current_color(Color::WHITE);
         draw_polygon(&mut frame_buffer, &polygon1_points);
 
-    let output_file = "polygon1.bmp";
+        let polygon2 = vec![
+            (321, 335), (288, 286), (339, 251), (374, 302)
+        ];
+    
+        let polygon2_points: Vec<Vector2> = polygon2
+            .into_iter()
+            .map(|(x, y)| Vector2::new(x as f32, y as f32))
+            .collect();
+    
+        frame_buffer.set_current_color(Color::BLUE);
+        fill_polygon(&mut frame_buffer, &polygon2_points);
+        frame_buffer.set_current_color(Color::WHITE);
+        draw_polygon(&mut frame_buffer, &polygon2_points);
+    
+
+    let output_file = "polygon2.bmp";
     frame_buffer.render_to_file(output_file);
 }
