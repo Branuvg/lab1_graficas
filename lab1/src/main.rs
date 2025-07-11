@@ -66,7 +66,34 @@ fn main() {
         frame_buffer.set_current_color(Color::WHITE);
         draw_polygon(&mut frame_buffer, &polygon3_points);
     
+    let polygon4 = vec![
+        (413, 177), (448, 159), (502, 88), (553, 53), (535, 36), (676, 37), (660, 52), (750, 145), (761, 179), (672, 192), (659, 214), (615, 214), (632, 230), (580, 230), (597, 215), (552, 214), (517, 144), (466, 180)
+    ];
 
-    let output_file = "polygon3.bmp";
+    let polygon4_points: Vec<Vector2> = polygon4
+        .into_iter()
+        .map(|(x, y)| Vector2::new(x as f32, y as f32))
+        .collect();
+
+    frame_buffer.set_current_color(Color::GREEN);
+    fill_polygon(&mut frame_buffer, &polygon4_points);
+    frame_buffer.set_current_color(Color::WHITE);
+    draw_polygon(&mut frame_buffer, &polygon4_points);
+
+    let polygon5 = vec![
+        (682, 175), (708, 120), (735, 148), (739, 170)
+    ];
+
+    let polygon5_points: Vec<Vector2> = polygon5
+        .into_iter()
+        .map(|(x, y)| Vector2::new(x as f32, y as f32))
+        .collect();
+
+    frame_buffer.set_current_color(Color::PURPLE);
+    fill_polygon(&mut frame_buffer, &polygon5_points);
+    frame_buffer.set_current_color(Color::WHITE);
+    draw_polygon(&mut frame_buffer, &polygon5_points);
+
+    let output_file = "polygon4.bmp";
     frame_buffer.render_to_file(output_file);
 }
