@@ -1,9 +1,13 @@
 mod framebuffer;
 mod line;
+mod polygon;
+mod polygon_fill;
 
 use raylib::prelude::*;
 use framebuffer::Framebuffer;
-use line::line;
+//use line::line;
+use polygon::draw_polygon;
+use polygon_fill::fill_polygon;
 
 fn main() {
     //Seteamos el canvas
@@ -18,6 +22,21 @@ fn main() {
     //Dibujamos lineas de prueba con line.rs
     //frame_buffer.set_current_color(Color::GREEN);
     //line(&mut frame_buffer, Vector2::new(100.0, 100.0), Vector2::new(200.0, 200.0));
+
+    //Poligono con array con polygon.rs
+    let polygon1 = vec![
+        (165, 380), (185, 360), (180, 330), (207, 345), (233, 330), (230, 360), (250, 380), (220, 385), (205, 410), (193, 383)
+    ];
+
+    let polygon1_points: Vec<Vector2> = polygon1
+        .into_iter()
+        .map(|(x, y)| Vector2::new(x as f32, y as f32))
+        .collect();
+
+        frame_buffer.set_current_color(Color::YELLOW);
+        fill_polygon(&mut frame_buffer, &polygon1_points);
+        frame_buffer.set_current_color(Color::WHITE);
+        draw_polygon(&mut frame_buffer, &polygon1_points);
 
     let output_file = "out.bmp";
     frame_buffer.render_to_file(output_file);
