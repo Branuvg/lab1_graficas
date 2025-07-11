@@ -94,6 +94,6 @@ fn main() {
     frame_buffer.set_current_color(Color::WHITE);
     draw_polygon(&mut frame_buffer, &polygon5_points);
 
-    let output_file = "polygon4.bmp";
+    let output_file = "out.bmp";
     frame_buffer.render_to_file(output_file);
 }
