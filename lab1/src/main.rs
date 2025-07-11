@@ -24,7 +24,7 @@ fn main() {
     //line(&mut frame_buffer, Vector2::new(100.0, 100.0), Vector2::new(200.0, 200.0));
 
     //Poligono con array con polygon.rs
-    /*let polygon1 = vec![
+    let polygon1 = vec![
         (165, 380), (185, 360), (180, 330), (207, 345), (233, 330), (230, 360), (250, 380), (220, 385), (205, 410), (193, 383)
     ];
 
@@ -64,7 +64,7 @@ fn main() {
         frame_buffer.set_current_color(Color::RED);
         fill_polygon(&mut frame_buffer, &polygon3_points);
         frame_buffer.set_current_color(Color::WHITE);
-        draw_polygon(&mut frame_buffer, &polygon3_points);*/
+        draw_polygon(&mut frame_buffer, &polygon3_points);
     
     let polygon4 = vec![
         (413, 177), (448, 159), (502, 88), (553, 53), (535, 36), (676, 37), (660, 52), (750, 145), (761, 179), (672, 192), (659, 214), (615, 214), (632, 230), (580, 230), (597, 215), (552, 214), (517, 144), (466, 180)
